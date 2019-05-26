@@ -1,37 +1,44 @@
 # MakersBnB
 
+## Context
+Four days group project for the sixth week Makers Academy Course.
+Team size: Four software developers.
 
-## Specification
+## Development Environment
+Language : Javascript (Backend and frontend)
+Frame: node.js, Express.js
+Database: PostgreSQL (ORM:Sequelize)
 
-We would like a web application that allows users to list spaces they have available, and to hire spaces for the night.
+## Test Environment
+Jasmine + Nightwatch.js
 
-### Headline specifications
+## How to Run
+Git clone the application and navigate (cd) into myapp repository
 
-- Any signed-up user can list a new space.
-- Users can list multiple spaces.
-- Users should be able to name their space, provide a short description of the space, and a price per night.
-- Users should be able to offer a range of dates where their space is available.
-- Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
-- Nights for which a space has already been booked should not be available for users to book that space.
-- Until a user has confirmed a booking request, that space can still be booked for that night.
+Installation required:
+* node.js
+* PostgreSQL
+* Sequelize
 
-### Nice-to-haves
+Run following command to setup database:
+```
+$ createdb makers_bnb
+```
 
-- Users should receive an email whenever one of the following happens:
- - They sign up
- - They create a space
- - They update a space
- - A user requests to book their space
- - They confirm a request
- - They request to book a space
- - Their request to book a space is confirmed
- - Their request to book a space is denied
-- Users should receive a text message to a provided number whenever one of the following happens:
- - A user requests to book their space
- - Their request to book a space is confirmed
- - Their request to book a space is denied
-- A ‘chat’ functionality once a space has been booked, allowing users whose space-booking request has been confirmed to chat with the user that owns that space
-- Basic payment implementation though Stripe.
+```
+$ sequelize db:migrate
+```
+
+Run the server (Node):
+
+```
+$ npm start
+```
+
+Open the app in a browser by insert url:
+```
+http://localhost:3000/
+```
 
 ### User Stories
 ```
@@ -55,39 +62,9 @@ As a Listing User
 So I can have a unique listing
 I want to be able to add a name, description and price to each space
 
-User story 5
-As a Listing User
-So I control tenancy dates
-I want to add available dates to my listings
-
-User story 6
-As a Renting User
-So I can choose a property to rent
-I want to view all listings
-
-User story 7
-As a Renting User
-So I can choose a property
-I want to see the available dates for a property
-
-User story 8
-As a Renting User
-So I can stay in a property
-I want to be able to request a property for one night
-
-User story 9
-As a Listing User
-So I can rent out a property
-I want to be able to see all requests and accept one user request for a property
-
-User story 10
-As a Listing User
-So my properties can only be booked once at a time
-I want the availability status of my property to be unavailable if booked
-
 ```
 
-
+### Extra
 Security vulnerability from installation of nightwatch
 
 Remediation
